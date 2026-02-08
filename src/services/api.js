@@ -351,3 +351,22 @@ export const getFinancialExtract = async (methodType, startDate, endDate) => {
   if (error) throw error;
   return data;
 };
+
+// --- ATUALIZAÇÃO DE ESTATÍSTICAS DE JOGO ---
+export const updateGameStats = async (gameId, field, value) => {
+  // field será 'first_goal_minute_1h' ou 'last_goal_minute_2h'
+  const payload = {};
+  payload[field] = parseInt(value) || 0;
+
+  const { data, error } = await supabase
+    .from('games')
+    .update(payload)
+    .eq('id', gameId)
+    .select();
+
+  if (error) {
+    console.error("Erro ao atualizar estatística:", error);
+    throw error;
+  }
+  return data;
+};
