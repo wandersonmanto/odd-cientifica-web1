@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta inspirada na Bet365 e Packball */
+  --color-brand-dark: #121212;       /* Fundo principal */
+  --color-brand-card: #1e1e1e;       /* Fundo dos cards/tabelas */
+  --color-brand-green: #26ffbe;      /* Aquele verde neon de destaque */
+  --color-brand-green-hover: #1zeea7;
+  --color-brand-gray: #383838;       /* Bordas e separadores */
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #a1a1a1;
+}
+
+body {
+  background-color: var(--color-brand-dark);
+  color: var(--color-text-primary);
+  font-family: 'Inter', sans-serif; /* Ou a fonte padrão do sistema */
+}
+
+/* Custom Scrollbar para ficar elegante */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-gray);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green);
+}
